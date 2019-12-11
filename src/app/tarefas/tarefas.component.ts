@@ -25,7 +25,7 @@ export class TarefasComponent implements OnInit {
   }
 
   getItensNaoRealizados(){
-    return this.itens.filter(function(item){ return !item.done })
+    return this.itens.filter(function(item){ return !item.realizacao })
   }
 
   adicionarItem(acao, prioridade, data){
@@ -33,6 +33,10 @@ export class TarefasComponent implements OnInit {
       this.itens.push(new Model(acao, false, prioridade, data));
     }
     this.sortByDataItem();
+  }
+
+  getItensRealizados(){
+    return this.itens.filter(function(item){ return item.realizacao});
   }
 
 }
