@@ -1,20 +1,52 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col bg-dark text-white">
-        <h1 class="text-align: center">SuperStudent!</h1>
+      <h1 class="text-align: center">SuperStudent!</h1>
     </div>
   </div>
 
   <div class="row">
     <div class="col-3 p-2">
-        <button class="bnt bnt-block btn-outline-primary">Tarefas</button><br>
-        <button class="bnt bnt-block btn-outline-primary">Materias</button><br>
-        <button class="bnt bnt-block btn-outline-primary">Métodos de Estudo</button><br>
+      <button class="bnt bnt-block btn-outline-primary" (click)="mudarAcao('')">Menu principal</button>
+      <p></p>
+      <button class="bnt bnt-block btn-outline-primary" (click)="mudarAcao('tarefa')">Tarefas e Atividades</button>
+      <p></p>
+      <button class="bnt bnt-block btn-outline-primary" (click)="mudarAcao('materias')">Matérias</button>
+      <p></p>
+      <button class="bnt bnt-block btn-outline-primary" (click)="mudarAcao('metodos')">Métodos de Estudo</button>
+      <p></p>
     </div>
-      
+
     <div class="col-9 p-2">
-      
+      <div *ngIf="acaoMenu == '' ">
+        <h3>O que é o SuperStudent?</h3>
+        <p>
+          O SuperStudent é uma aplicação que visa melhorar o seu desempenho, tanto em suas atividades acadêmicas, como também em seus estudos pessoais.
+        </p>
+        <p>
+          Na aba <b>Testes e Atividades</b> você pode organizar suas atividades, para que você possa ter um maior controle daquilo que você irá fazer.
+        </p>
+        <p>
+          Na aba <b>Matérias</b> estará organizado as suas disciplinas e as suas respectivas notas.
+        </p>
+        <p>
+          Na aba <b>Métodos de Estudo</b> você pode encontrar algumas propostas de estudo que podem impulcionar o seu trabalho.
+        </p>
+        <h3>Bons estudos!</h3>
+      </div>
+
+      <div *ngIf="acaoMenu == 'tarefa'">
+        <app-tarefas>Aqui deve estar as suas tarefas!</app-tarefas>
+      </div>
+
+      <div *ngIf="acaoMenu == 'materias'">
+        <app-materias>Aqui deve estar organizadas as suas matérias!</app-materias>
+      </div>
+
+      <div *ngIf="acaoMenu == 'metodos'">
+        <app-metodos>Aqui deve estar os métodos de estudo!</app-metodos>
+      </div>
+
     </div>
   </div>
-  
 </div>
