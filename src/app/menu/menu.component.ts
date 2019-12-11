@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { TarefasComponent } from "../tarefas/tarefas.component";
+import { MetodosComponent } from "../metodos/metodos.component";
+import { MateriasComponent } from "../materias/materias.component";
 
 @Component({
   selector: 'app-menu',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
+  public acaoMenu = "";
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  mudarAcao(novaAcao?: string){
+    this.acaoMenu = novaAcao;
   }
 
 }
