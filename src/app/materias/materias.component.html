@@ -1,3 +1,55 @@
-<p>
-  materias works!
-</p>
+<div>
+  <h1>MATÉRIAS</h1><br>
+  <div>
+    <input class="form-control" placeholder="Digite o nome da disciplina..." #nomeMateria>
+    <br>
+
+    Quantos serão os períodos / unidades? &nbsp; &nbsp;
+    <select #numeroPeriodos>
+      <option></option>
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+    </select>
+
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <button class="btn-primary mt-1" (click)="criarMateria(nomeMateria.value, numeroPeriodos.value)">Adicionar</button>
+    <br><br>
+  </div>
+
+  <div class="bg-primary p-1 text-white"></div>
+
+  <br>
+
+  <table class="table table-striped table-bordered">
+
+    <tr>
+      <div *ngFor="let materia of pegarMaterias()">
+        <td>
+          {{materia.materia}}
+        </td>
+        <td>
+          <input type="number" [(ngModel)]="materias.nI">
+        </td>
+        <td>
+          <input type="number" [(ngModel)]="materias.nII">
+        </td>
+        <td>
+          <input type="number" [(ngModel)]="materias.nIII">
+        </td>
+        <td>
+          <input type="number" [(ngModel)]="materias.nIV">
+        </td>
+        <td>
+          <button (click)="calcularMedia()">Calcular!</button>
+        </td>
+        <td>
+          Média: {{materias.media}}
+        </td>
+      </div>
+      
+    </tr>
+  </table>
+
+</div>
