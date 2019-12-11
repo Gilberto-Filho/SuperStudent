@@ -1,3 +1,26 @@
-<p>
-  tarefas works!
-</p>
+<div>
+  <h1>TAREFAS E ATIVIDADES</h1> <br>
+  
+  <div>
+    <input class="form-control" placeholder="Digite sua atividade/tarefa..." #acao> <br>
+    
+    Qual é a prioridade:
+    <select #prioridade>
+      <option></option>
+      <option>Baixa</option>
+      <option>Media</option>
+      <option>Alta</option>
+    </select>
+
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    Qual é o prazo:
+    <input type="date" #data>
+
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <button class="btn-primary mt-1" (click)="adicionarItem(acao.value, prioridade.value, data.value)">Adicionar...</button>
+    <br><br>
+
+    <div class="bg-primary p-1 text-white"></div>
+  </div>
+
+</div>
